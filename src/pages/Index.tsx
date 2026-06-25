@@ -112,7 +112,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <header className="relative overflow-hidden bg-gradient-to-br from-primary to-[hsl(207,90%,38%)] text-white">
+      <header className="relative overflow-hidden bg-gradient-to-br from-primary to-[hsl(207,87%,34%)] text-white">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 20% 30%, white 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
         <div className="container relative py-16 md:py-24">
           <div className="flex items-center gap-2 text-sm text-white/70 mb-6 font-medium">
