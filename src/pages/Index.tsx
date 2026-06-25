@@ -5,11 +5,12 @@ type Vacancy = {
   title: string;
   category: string;
   salary: string;
-  location: string;
+  location?: string;
   schedule: string;
   employment: string;
   experience: string;
   hot?: boolean;
+  perks: [string, string];
 };
 
 const categories = [
@@ -28,29 +29,29 @@ const vacancies: Vacancy[] = [
     title: 'Администратор ресепшен',
     category: 'С гостями',
     salary: '60 000 — 80 000 ₽',
-    location: 'Имеретинский квартал',
     schedule: 'Сменный график',
     employment: 'Полная занятость',
     experience: 'Опыт от 1 года',
     hot: true,
+    perks: ['Дружный коллектив', 'Лёгкая адаптация'],
   },
   {
     title: 'Администратор пункта велопроката',
     category: 'С гостями',
     salary: 'от 63 495 до 67 728 ₽',
-    location: 'Набережная',
     schedule: 'График 2/2',
     employment: 'Полная занятость',
     experience: 'Опыт от 1 года',
+    perks: ['Творческая обстановка', 'Дружный коллектив'],
   },
   {
     title: 'Бухгалтер по учёту ТМЦ',
     category: 'В офисе',
     salary: '101 700 ₽ на руки',
-    location: 'Офис, Сириус',
     schedule: '5/2, с 9:00 до 18:00',
     employment: 'Полная занятость',
     experience: 'Опыт от 3 лет',
+    perks: ['Экспертная среда', 'Интересные проекты'],
   },
   {
     title: 'Спасатель на пляже',
@@ -61,24 +62,25 @@ const vacancies: Vacancy[] = [
     employment: 'Сезонная работа',
     experience: 'Сертификат спасателя',
     hot: true,
+    perks: ['Дружный коллектив', 'Творческая обстановка'],
   },
   {
     title: 'Повар горячего цеха',
     category: 'В службе питания',
     salary: '85 000 — 110 000 ₽',
-    location: 'Ресторан «Морской»',
     schedule: 'График 3/3',
     employment: 'Полная занятость',
     experience: 'Опыт от 2 лет',
+    perks: ['Экспертная среда', 'Дружный коллектив'],
   },
   {
     title: 'Инженер по эксплуатации зданий',
     category: 'В эксплуатации',
     salary: 'от 90 000 ₽',
-    location: 'Техническая служба',
     schedule: '5/2, с 8:00 до 17:00',
     employment: 'Полная занятость',
     experience: 'Опыт от 3 лет',
+    perks: ['Интересные проекты', 'Экспертная среда'],
   },
   {
     title: 'Медицинская сестра',
@@ -88,15 +90,16 @@ const vacancies: Vacancy[] = [
     schedule: 'Сменный график',
     employment: 'Полная занятость',
     experience: 'Опыт от 1 года',
+    perks: ['Лёгкая адаптация', 'Дружный коллектив'],
   },
   {
     title: 'Хостес ресторана',
     category: 'С гостями',
     salary: '55 000 — 70 000 ₽',
-    location: 'Лобби-бар',
     schedule: 'График 2/2',
     employment: 'Полная занятость',
     experience: 'Без опыта',
+    perks: ['Лёгкая адаптация', 'Творческая обстановка'],
   },
 ];
 
@@ -165,15 +168,22 @@ const Index = () => {
               <div className="flex flex-col lg:flex-row lg:items-center gap-6">
                 {/* Left: title + salary */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-2">
+                  <div className="flex items-center flex-wrap gap-2 mb-2">
                     {v.hot && (
                       <span className="inline-flex items-center gap-1 bg-orange-100 text-orange-600 text-xs font-semibold px-2.5 py-1 rounded-full">
                         <Icon name="Flame" size={12} /> Горящая
                       </span>
                     )}
-                    <span className="inline-flex items-center gap-1.5 bg-accent text-accent-foreground text-xs font-medium px-2.5 py-1 rounded-full">
-                      <Icon name="MapPin" size={12} /> {v.location}
-                    </span>
+                    {v.location && (
+                      <span className="inline-flex items-center gap-1.5 bg-accent text-accent-foreground text-xs font-medium px-2.5 py-1 rounded-full">
+                        <Icon name="MapPin" size={12} /> {v.location}
+                      </span>
+                    )}
+                    {v.perks.map((perk) => (
+                      <span key={perk} className="inline-flex items-center bg-accent text-accent-foreground text-xs font-medium px-2.5 py-1 rounded-full">
+                        {perk}
+                      </span>
+                    ))}
                   </div>
                   <h2 className="font-display font-bold text-2xl text-foreground mb-1 transition-colors group-hover:text-primary">
                     {v.title}
