@@ -134,7 +134,7 @@ const Index = () => {
 
       <main className="container py-12 md:py-16">
         {/* Filters */}
-        <div className="flex gap-2 mb-10 overflow-x-auto pb-1" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+        <div className="flex justify-center gap-2 mb-10 overflow-x-auto pb-1" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
           {categories.map((cat) => {
             const isActive = active === cat;
             return (
