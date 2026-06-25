@@ -179,7 +179,7 @@ const Index = () => {
                         <Icon name="MapPin" size={12} /> {v.location}
                       </span>
                     )}
-                    {v.perks.map((perk) => (
+                    {(v.hot ? v.perks.slice(0, v.location ? 0 : 1) : v.perks).map((perk) => (
                       <span key={perk} className="inline-flex items-center bg-accent text-accent-foreground text-xs font-medium px-2.5 py-1 rounded-full">
                         {perk}
                       </span>
