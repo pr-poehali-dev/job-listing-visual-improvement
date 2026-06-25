@@ -47,7 +47,7 @@ const vacancies: Vacancy[] = [
   {
     title: 'Бухгалтер по учёту ТМЦ',
     category: 'В офисе',
-    salary: '101 700 ₽ на руки',
+    salary: '101 700 ₽',
     schedule: '5/2, с 9:00 до 18:00',
     employment: 'Полная занятость',
     experience: 'Опыт от 3 лет',
