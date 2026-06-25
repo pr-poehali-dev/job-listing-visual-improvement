@@ -178,7 +178,10 @@ const Index = () => {
                   <h2 className="font-display font-bold text-2xl text-foreground mb-1 transition-colors group-hover:text-primary">
                     {v.title}
                   </h2>
-                  <p className="text-lg font-semibold text-primary">{v.salary}</p>
+                  <p className="text-lg font-semibold text-primary mb-2">{v.salary}</p>
+                  <a href="#" className="inline-flex items-center gap-1 text-sm text-primary/70 hover:text-primary transition-colors">
+                    Подробнее <Icon name="ArrowRight" size={14} />
+                  </a>
                 </div>
 
                 {/* Middle: meta */}
