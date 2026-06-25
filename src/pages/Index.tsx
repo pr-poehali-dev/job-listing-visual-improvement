@@ -175,11 +175,11 @@ const Index = () => {
                       </span>
                     )}
                     {v.location && (
-                      <span className="inline-flex items-center gap-1.5 bg-accent text-accent-foreground text-xs font-medium px-2.5 py-1 rounded-full">
-                        <Icon name="MapPin" size={12} /> {v.location}
+                      <span className="inline-flex items-center bg-accent text-accent-foreground text-xs font-medium px-2.5 py-1 rounded-full">
+                        {v.location}
                       </span>
                     )}
-                    {(v.hot ? v.perks.slice(0, v.location ? 0 : 1) : v.perks).map((perk) => (
+                    {(v.hot ? v.perks.slice(0, v.location ? 0 : 1) : v.location ? v.perks.slice(0, 1) : v.perks).map((perk) => (
                       <span key={perk} className="inline-flex items-center bg-accent text-accent-foreground text-xs font-medium px-2.5 py-1 rounded-full">
                         {perk}
                       </span>
