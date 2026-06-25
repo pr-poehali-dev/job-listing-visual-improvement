@@ -199,7 +199,7 @@ const Index = () => {
 
                 {/* Right: action */}
                 <div className="shrink-0">
-                  <button className="w-full lg:w-auto inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-display font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5">
+                  <button className="w-full lg:w-auto inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-display font-semibold px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5">
                     Откликнуться
                     <Icon name="ArrowRight" size={18} className="transition-transform group-hover:translate-x-1" />
                   </button>
